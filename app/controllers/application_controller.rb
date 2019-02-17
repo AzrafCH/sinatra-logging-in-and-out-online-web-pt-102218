@@ -13,6 +13,7 @@ class ApplicationController < Sinatra::Base
   post '/login' do
     @user = User.new(username: params["username"], password: params["password"])
     @user.save
+    session[:user_id] = @user.id
   end
 
   get '/account' do
