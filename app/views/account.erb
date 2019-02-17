@@ -1,8 +1,5 @@
-<% if Helpers.is_logged_in(session) %>
-    <h1>Welcome <%= Helpers.current_user(session).username %></h1>
-    <h3>Balance: <%= Helpers.current_user(session).balance %></h3>
-<%end%>
-
-<form action="/logout" method="post">
-  <input type="submit" id="Log Out" value="Log Out" name="logout">
-</form>
+<% if Helpers.is_logged_in?(session) %>
+  <h1>Welcome <%= Helpers.current_user(session).username %></h1>
+  <h3>Your Balance: <%= Helpers.current_user(session).balance %></h3>
+  <h4><a href="/logout">Log Out</a></h4>
+<% end %>
